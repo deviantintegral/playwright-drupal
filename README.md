@@ -198,8 +198,6 @@ test('proves parallel tests work', async ({ page }) => {
   await page.getByLabel('Title', { exact: true }).fill(randomTitle);
   await page.getByRole('button', { name: 'Save' }).click();
 
-  await expect(page.url()).toMatch('node/1')
-
   await expect(page).toHaveTitle(`${randomTitle} | Playwright`);
   await expect(page.locator('h1')).toHaveText(randomTitle);
 });
