@@ -115,8 +115,8 @@ Set the following in `test/playwright/tsconfig.json`, merging with any existing 
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~": ["./src"],
-      "~*": ["./src/*"],
+      "~": ["./tests"],
+      "~*": ["./tests/*"],
       "@packages/playwright-drupal": ["./packages/playwright-drupal"]
     }
   },
@@ -360,7 +360,7 @@ import {config} from '~/visualdiff-urls';
 config.describe();
 ```
 
-3. Update the Playwright configuration to skip these tests in normal functional tests, and skip normal functional tests when running these tests.
+3. Update the Playwright configuration at `playwright.config.ts` to skip these tests in normal functional tests, and skip normal functional tests when running these tests.
 
 For all existing tests, add `testIgnore` like so:
 
