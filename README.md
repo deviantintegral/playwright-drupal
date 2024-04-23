@@ -61,12 +61,14 @@ Integrating this library into a site takes several steps. For the sake of comple
 ### Create the Drupal Site and Initialize DDEV
 
 ```console
-composer create-project drupal/recommended-project pwtest
-composer require drush/drush
+mkdir pwtest
 cd pwtest
-ddev config --project-type drupal10
-ddev get deviantintegral/ddev-playwright
+ddev config --project-type=drupal --php-version=8.3 --docroot=web
 ddev start
+ddev composer create drupal/recommended-project:^10
+ddev composer require drush/drush
+ddev get deviantintegral/ddev-playwright
+ddev restart
 ```
 
 ### Initialize Playwright Tests
